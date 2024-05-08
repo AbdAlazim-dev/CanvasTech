@@ -1,0 +1,230 @@
+@use "../global/" as *;
+
+
+.navbar {
+    &__container {
+        -webkit-box-shadow: 0px 4px 5px -5px rgba(0, 0, 0, 0.23);
+        -moz-box-shadow: 0px 4px 5px -5px rgba(0, 0, 0, 0.23);
+        box-shadow: 0px 4px 5px -5px rgba(0, 0, 0, 0.23);
+        transition: 0.7s;
+        position: sticky;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 5rem;
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        &.top_header {
+            background-color: transparent;
+            box-shadow: none;
+            transition: 0.7s;
+            height: 14rem;
+            //remove the before 
+            &::before {
+                display: block;
+                opacity: 100%;
+            }
+        }
+        &::before {
+            transition: 0.7s;
+            position: absolute;
+            content: "";
+            display: none;
+            opacity: 0;
+            width: calc(100% - 10rem);
+            height: 0.2rem;
+            background-color: $text-Dgray;
+            bottom: 0;
+        }
+        &__image {
+            width: 7.5rem;
+            position: relative;
+            &:hover {
+                &::after {
+                    left: -20px;
+                    top: 20%;
+                    opacity: 100%;
+                }
+                &::before {
+                    left: -120px;
+                    opacity: 100%;
+                }
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+            &::after {
+                transition: opacity 0.9s, left 0.7s, top 0.7s;
+                content: "";
+                display: block;
+                width: 0.3rem;
+                height: 80%;
+                background-color: $theme_color;
+                position: absolute;
+                left: 0px;
+                top: 20%;
+                opacity: 0;
+                @media (max-width: 950px){
+                    left: -20px;
+                    top: 20%;
+                    opacity: 100%;
+                }
+            }
+            &::before {
+                transition: opacity 0.9s, left 0.7s, top 0.7s;
+                transition: 0.7s;
+                content: "نموذج تك";
+                display: block;
+                position: absolute;
+                left: 0px;
+                top: 40%;
+                color: $theme_color;
+                font-size: $h3-size;
+                font-weight: 500;
+                opacity: 0;
+                font-family: $paragraph-font;
+                @media (max-width: 950px){
+                    left: -100px;
+                    opacity: 100%;
+                }
+            }
+        }
+        &__links {
+            display: flex;
+            justify-content: start;
+            gap: 2.5rem;
+            list-style: none;
+            font-size: $h3-size;
+            font-weight: 600;
+            margin-top: 1.4rem;
+            @media (max-width: 950px) {
+                display: none;
+            }
+        }
+        &__btn {
+            background-color: $theme_color;
+            font-size: $h4-size;
+            color: $text-white;
+            border-radius: 2rem;
+            font-family: $title-font;
+            width: 12rem;
+            height:4rem ;
+            font-weight: 600;
+            border: none;
+            outline: none;
+            transition: 0.7s;
+            &:hover {
+                background-color: lighten($theme_color, 10%);
+                width: 12.2rem;
+                height: 4.2rem;
+            } 
+            @media (max-width: 950px) {
+                display: none;
+            }
+        }
+        &__mobile__menu {
+            display: none;
+            font-weight: 600;
+            color: $text-Dgray;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            margin-top: 1rem;
+            svg {
+                font-size: 3rem;
+            }
+            @media (max-width: 950px) {
+                display: block;
+            }
+        }
+    }
+    .mobile__navbar {
+        z-index: 1;
+        transition: 0.7s;
+        width: 50%;
+        height: 100%;
+        position: fixed;
+        @media (max-width: 750px) {
+            width: 70%;
+        }
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        top: 0;
+        right: -50%;
+        @media (max-width: 750px) {
+            right: -70%;
+            
+        }
+        height: 100vh;
+        border-left: 0.6rem solid $theme_color;
+            .logo {
+                width: 10rem;
+                margin: 4rem auto 4rem;
+            }
+        &__close {
+            position: absolute;
+            left: 3rem;
+            top: 3rem;
+            font-size: 3rem;
+            color: $theme_color;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+        
+        &__links {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            list-style: none;
+            font-size: $h3-size;
+            font-weight: 600;
+            text-align: start;
+            position: relative;
+            padding: 2rem 4rem;
+            &::before {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 80%;
+                height: 0.1rem;
+                background-color: $text-Dgray;
+                top: 0;
+                right: calc(50% - 40%);
+            }
+        }
+        &__btn {
+            background-color: $theme_color;
+            font-size: $h4-size;
+            color: $text-white;
+            border-radius: 2rem;
+            font-family: $title-font;
+            width: 12rem;
+            height:4rem ;
+            font-weight: 600;
+            border: none;
+            outline: none;
+        }
+    }
+}
+.active_mobile_menu {
+    right: 0% !important;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    display: none;
+    &.active {
+        display: block;
+    }
+}

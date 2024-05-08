@@ -1,0 +1,67 @@
+@use "./colors" as *;
+@use "./fonts" as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: $title-font;
+  position: relative;
+}
+
+html {
+  font-size: 62.5%;
+  direction: rtl;
+}
+
+/* global */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 19px;
+}
+// scroll bar ------
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $theme_color #ffffff;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: $theme_color;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: $theme_color;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: $theme_color;
+}
