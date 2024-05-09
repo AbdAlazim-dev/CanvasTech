@@ -3,31 +3,37 @@
 
 .navbar {
     &__container {
-        -webkit-box-shadow: 0px 4px 5px -5px rgba(0, 0, 0, 0.23);
-        -moz-box-shadow: 0px 4px 5px -5px rgba(0, 0, 0, 0.23);
-        box-shadow: 0px 4px 5px -5px rgba(0, 0, 0, 0.23);
+        transition: 0.7s !important;
+        -webkit-box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.23);
+        -moz-box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.23);
+        box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.23);
         transition: 0.7s;
         position: sticky;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 2rem 5rem;
+        height: 10rem;
         position: fixed;
         background-color: white;
         width: 100%;
+        @media (max-width: 950px) {
+            padding: 2rem 3rem;
+        }
         &.top_header {
             background-color: transparent;
             box-shadow: none;
-            transition: 0.7s;
-            height: 14rem;
+            transition: 0.7s !important;
+            height: 12rem;
             //remove the before 
             &::before {
+                transition: 0.7s !important;
                 display: block;
                 opacity: 100%;
             }
         }
         &::before {
-            transition: 0.7s;
+            transition: 0.7s !important;
             position: absolute;
             content: "";
             display: none;

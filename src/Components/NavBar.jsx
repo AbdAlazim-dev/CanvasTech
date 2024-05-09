@@ -27,7 +27,7 @@ function NavBar() {
     return (
         <>
             <header className="navbar">
-                <nav className={`navbar__container ${Sticky && "top_header"}`}>
+                <nav className={`navbar__container ${Sticky ? "top_header" : ""}`}>
                 <div 
                     onClick={closeMobileMenu}
                     className={`overlay ${mobileMenu && "active"}`}>

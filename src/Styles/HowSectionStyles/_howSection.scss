@@ -1,0 +1,82 @@
+@use "../global/" as *;
+
+#how_section {
+    height: 100vh;
+    padding-top: 5rem;
+    background-color: $light_background;
+    .title {
+        color : $theme_color;
+        font-size: $h2-size;
+        font-family: $title-font;
+        font-weight: 600;
+        margin-bottom: 4rem;
+    }
+    .steps {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 2rem;
+        @media (max-width: 850px) {
+            gap: 1rem;
+        }
+        li {
+            transition: 0.35s;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1rem;
+            align-items: center;
+            border-radius: 1rem;
+            @media (max-width: 850px) {
+                width: calc(50% - 1rem);
+            }
+            box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.049);
+            &:hover {
+                box-shadow: 0 0 1rem 0.1rem $trans_theme_color;
+                &.li .icon {
+                    color: $hover_theme_color;
+                }
+            }
+            .icon {
+                font-size: 5rem !important;
+                color: $theme_color;
+            }
+            .description {
+                color: $text-Dgray;
+                font-size: $h3-size !important;
+                font-family: $paragraph-font;
+                font-weight: 400;
+                text-align: center;
+                margin-top: 2rem;
+            }
+        }
+        .action {
+            width: 60%;
+            display: flex;
+            padding: 2rem;
+            justify-content: flex-end;
+            align-items: flex-end;
+            @media (max-width: 850px) {
+                width: calc(50% - 1rem);
+                justify-content: center;
+                align-items: center;
+            }
+            button {
+                border: none;
+                outline: none;
+                width: 20rem;
+                height: 4rem;
+                background-color: $theme_color;
+                color: $text-white;
+                font-size: $h4-size;
+                font-family: $title-font;
+                border-radius: 2rem;
+                transition: 0.35s;
+                &:hover {
+                    background-color: $hover_theme_color;
+                }
+            }
+        }
+    }
+}

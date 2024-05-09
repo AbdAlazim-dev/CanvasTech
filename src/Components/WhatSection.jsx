@@ -1,9 +1,13 @@
 function WhatSection() {
     return (
-        <section className="what_section">
+        <section id="what_section">
             <div className="container">
-                <h2>What is it?</h2>
-                <p>It is a simple todo app that allows you to add, delete, and edit tasks.</p>
+                <h2 className="title">نموذج تك</h2>
+                <p className="paragraph">هذه الخدمة تتيح لك معرفة نموذج العمل التجاري الأكثر ملاءمة لفكرتك الابتكارية، عن طريق الإجابة عن بعض الأسئلة الخاصة بفكرة مشروعك، ومساعدتك على التطور، 
+                والاطلاع على تجارب الرواد المحليين
+                 والدوليين، حيث تعد نماذج الأعمال التجارية (Business models)
+                  مهمةً لكل من المنشآت الجديدة والقائمة؛ فهي تساعدهم على النمو، وزيادة
+                   الربحية والتنافسية، وجذب الاستثمار.</p>
             </div>
         </section>
     );
