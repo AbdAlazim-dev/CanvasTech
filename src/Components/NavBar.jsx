@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import JdwaLogo from "../assets/Aljdwa.png"
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -9,7 +10,6 @@ function NavBar() {
     const [Sticky, setSticky] = useState(false)
 
     const openMobileMenu = () => {
-        console.log("clicked")
         setMobileMenu(!mobileMenu)
     }
     const closeMobileMenu = () => {
@@ -32,17 +32,17 @@ function NavBar() {
                     onClick={closeMobileMenu}
                     className={`overlay ${mobileMenu && "active"}`}>
                 </div>
-                    <div className="navbar__container__image">
+                    <Link to="/" className="navbar__container__image">
                         <img src={JdwaLogo} alt="logo"/>
-                    </div>
+                    </Link>
                     <ul className="navbar__container__links">
                         <li><a href="">عن الجدوى</a></li>
                         <li><a href="">الخدمات الاستشارية</a></li>
                         <li><a href="">مجتمع الجدوى</a></li>
-                    </ul>
                     <button className="navbar__container__btn">
                         تسجيل الدخول
                     </button>
+                    </ul>
                     <button onClick={openMobileMenu}
                         className="navbar__container__mobile__menu">
                         <GiHamburgerMenu/>

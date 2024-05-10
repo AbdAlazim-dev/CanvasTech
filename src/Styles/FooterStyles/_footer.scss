@@ -1,0 +1,55 @@
+@use "../global/" as *;
+.footer {
+    background-color: $theme_color;
+    color: white;
+    padding: 2rem 0;
+    p {
+        text-align: center;
+    }
+}
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    div {
+        max-width: 30%;
+        .title {
+            font-size: $h3-size;
+            font-family: $title-font;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #22B261;
+        }
+        svg {
+            font-size: 1.5rem;
+            color: #22B261;
+            margin-left: 1rem;
+        }
+        span {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.4rem;
+        }
+    }
+    &__logo {
+        color: #ebebeb;
+        img {
+            width: 8rem;
+            filter: brightness(0) invert(1);
+            margin-bottom: 0.5rem;
+        }
+        p {
+            text-align: right;
+        }
+    }
+    &__customer_service {
+        display: flex;
+        flex-direction: column;
+    }
+    &__contact {
+        @media (max-width: 850px) {
+            flex:1 ;
+        }
+    }
+}

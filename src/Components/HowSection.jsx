@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
 import { RiQuestionAnswerLine } from "react-icons/ri";
 import { MdAttachMoney } from "react-icons/md";
@@ -54,10 +55,12 @@ function HowSection() {
                             الاستفادة من المقترحات في خطتك التجارية القادمة.
                         </span>
                     </li>
-                    <div className="action">
-                        <button>ابــدأ</button>
-                    </div>
                 </ol>
+                <Link onClick={() => {
+                    scrollTo(0, 0)
+                }} to="/create" className="action">
+                    <button>ابــدأ</button>
+                </Link>
             </div>
         </section>
     )

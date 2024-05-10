@@ -1,9 +1,9 @@
 @use "../global/" as *;
 
 #how_section {
-    height: 100vh;
     padding-top: 5rem;
     background-color: $light_background;
+    counter-reset: step;
     .title {
         color : $theme_color;
         font-size: $h2-size;
@@ -28,6 +28,27 @@
             padding: 2rem 1rem;
             align-items: center;
             border-radius: 1rem;
+            position: relative;
+            &::before {
+                transition: 0.35s;
+                counter-increment: step;
+                content: counter(step);
+                color: $text-white;
+                font-size: $h4-size;
+                font-family: $title-font;
+                font-weight: 600;
+                position: absolute;
+                top: -15px;
+                left: calc(50% - 15px);
+                background-color: $theme_color;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2;
+            }
             @media (max-width: 850px) {
                 width: calc(50% - 1rem);
             }
@@ -36,6 +57,9 @@
                 box-shadow: 0 0 1rem 0.1rem $trans_theme_color;
                 &.li .icon {
                     color: $hover_theme_color;
+                }
+                &::before {
+                    background-color: $hover_theme_color;
                 }
             }
             .icon {
@@ -51,31 +75,27 @@
                 margin-top: 2rem;
             }
         }
-        .action {
-            width: 60%;
-            display: flex;
-            padding: 2rem;
-            justify-content: flex-end;
-            align-items: flex-end;
-            @media (max-width: 850px) {
-                width: calc(50% - 1rem);
-                justify-content: center;
-                align-items: center;
-            }
-            button {
-                border: none;
-                outline: none;
-                width: 20rem;
-                height: 4rem;
-                background-color: $theme_color;
-                color: $text-white;
-                font-size: $h4-size;
-                font-family: $title-font;
-                border-radius: 2rem;
-                transition: 0.35s;
-                &:hover {
-                    background-color: $hover_theme_color;
-                }
+    }
+    .action {
+        width: 100%;
+        display: flex;
+        padding: 2rem;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            border: none;
+            outline: none;
+            width: 20rem;
+            height: 4rem;
+            background-color: $theme_color;
+            color: $text-white;
+            font-size: $h4-size;
+            font-family: $title-font;
+            border-radius: 2rem;
+            transition: 0.35s;
+            &:hover {
+                background-color: $hover_theme_color;
             }
         }
     }

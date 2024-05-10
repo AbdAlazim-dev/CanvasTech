@@ -1,7 +1,6 @@
 @use "../global/" as *;
 #what_section {
-    height: 50vh;
-    padding-top: 15rem;
+    padding: 15rem 0 5rem 0;
     overflow: visible;
     display: flex;
     justify-content: center;
@@ -13,6 +12,7 @@
         font-weight: 600;
     }
     .paragraph {
+        line-height: 3rem;
         color: $text-Dgray;
         font-size: $h3-size;
         font-family: $paragraph-font;

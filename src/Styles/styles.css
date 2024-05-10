@@ -14,6 +14,7 @@ a {
 body {
   font-family: "Changa", sans-serif;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -66,6 +67,10 @@ html {
   background-color: #222e60;
 }
 
+* {
+  theme_color: #222e60;
+}
+
 .navbar__container {
   transition: 0.7s !important;
   box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.23);
@@ -79,10 +84,11 @@ html {
   position: fixed;
   background-color: white;
   width: 100%;
+  z-index: 100;
 }
 @media (max-width: 950px) {
   .navbar__container {
-    padding: 2rem 3rem;
+    padding: 2rem 1rem;
   }
 }
 .navbar__container.top_header {
@@ -106,6 +112,12 @@ html {
   height: 0.2rem;
   background-color: #545556;
   bottom: 0;
+}
+@media (max-width: 950px) {
+  .navbar__container::before {
+    width: 100%;
+    left: 0;
+  }
 }
 .navbar__container__image {
   width: 7.5rem;
@@ -167,10 +179,10 @@ html {
   display: flex;
   justify-content: start;
   gap: 2.5rem;
+  align-items: center;
   list-style: none;
   font-size: 1.6rem;
   font-weight: 600;
-  margin-top: 1.4rem;
 }
 @media (max-width: 950px) {
   .navbar__container__links {
@@ -189,11 +201,11 @@ html {
   border: none;
   outline: none;
   transition: 0.7s;
+  margin-right: 0.6rem;
+  cursor: pointer;
 }
 .navbar__container__btn:hover {
-  background-color: #2f4086;
-  width: 12.2rem;
-  height: 4.2rem;
+  background-color: #3d52ab;
 }
 @media (max-width: 950px) {
   .navbar__container__btn {
@@ -219,7 +231,7 @@ html {
   }
 }
 .navbar .mobile__navbar {
-  z-index: 1;
+  z-index: 200;
   transition: 0.7s;
   width: 50%;
   height: 100%;
@@ -310,8 +322,7 @@ html {
 }
 
 #what_section {
-  height: 50vh;
-  padding-top: 15rem;
+  padding: 15rem 0 5rem 0;
   overflow: visible;
   display: flex;
   justify-content: center;
@@ -324,6 +335,7 @@ html {
   font-weight: 600;
 }
 #what_section .paragraph {
+  line-height: 3rem;
   color: #545556;
   font-size: 1.6rem;
   font-family: "Readex Pro", sans-serif;
@@ -332,9 +344,9 @@ html {
 }
 
 #how_section {
-  height: 100vh;
   padding-top: 5rem;
   background-color: #f5f5f5;
+  counter-reset: step;
 }
 #how_section .title {
   color: #222e60;
@@ -363,7 +375,28 @@ html {
   padding: 2rem 1rem;
   align-items: center;
   border-radius: 1rem;
+  position: relative;
   box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.049);
+}
+#how_section .steps li::before {
+  transition: 0.35s;
+  counter-increment: step;
+  content: counter(step);
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-family: "Changa", sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top: -15px;
+  left: calc(50% - 15px);
+  background-color: #222e60;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
 @media (max-width: 850px) {
   #how_section .steps li {
@@ -375,6 +408,9 @@ html {
 }
 #how_section .steps li:hover.li .icon {
   color: #1342ff;
+}
+#how_section .steps li:hover::before {
+  background-color: #1342ff;
 }
 #how_section .steps li .icon {
   font-size: 5rem !important;
@@ -388,21 +424,14 @@ html {
   text-align: center;
   margin-top: 2rem;
 }
-#how_section .steps .action {
-  width: 60%;
+#how_section .action {
+  width: 100%;
   display: flex;
   padding: 2rem;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
 }
-@media (max-width: 850px) {
-  #how_section .steps .action {
-    width: calc(50% - 1rem);
-    justify-content: center;
-    align-items: center;
-  }
-}
-#how_section .steps .action button {
+#how_section .action button {
   border: none;
   outline: none;
   width: 20rem;
@@ -414,6 +443,62 @@ html {
   border-radius: 2rem;
   transition: 0.35s;
 }
-#how_section .steps .action button:hover {
+#how_section .action button:hover {
   background-color: #1342ff;
+}
+
+.footer {
+  background-color: #222e60;
+  color: white;
+  padding: 2rem 0;
+}
+.footer p {
+  text-align: center;
+}
+
+.footer_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.footer_content div {
+  max-width: 30%;
+}
+.footer_content div .title {
+  font-size: 1.6rem;
+  font-family: "Changa", sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #22B261;
+}
+.footer_content div svg {
+  font-size: 1.5rem;
+  color: #22B261;
+  margin-left: 1rem;
+}
+.footer_content div span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+.footer_content__logo {
+  color: #ebebeb;
+}
+.footer_content__logo img {
+  width: 8rem;
+  filter: brightness(0) invert(1);
+  margin-bottom: 0.5rem;
+}
+.footer_content__logo p {
+  text-align: right;
+}
+.footer_content__customer_service {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 850px) {
+  .footer_content__contact {
+    flex: 1;
+  }
 }/*# sourceMappingURL=styles.css.map */

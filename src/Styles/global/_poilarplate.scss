@@ -14,6 +14,7 @@ a {
 body {
   font-family: $title-font;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -64,4 +65,7 @@ html {
 
 *::-webkit-scrollbar-thumb:active {
   background-color: $theme_color;
+}
+* {
+  theme_color: $theme_color
 }
