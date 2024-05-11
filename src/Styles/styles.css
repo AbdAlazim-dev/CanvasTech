@@ -591,17 +591,39 @@ html {
 }
 .form_section__form_container .form_step .form_step_questions .form_group .title {
   color: #222e60;
+  font-size: 1.6rem;
+  font-family: "Changa", sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.form_section__form_container .form_step .form_step_questions .form_group__checkbox_container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+.form_section__form_container .form_step .form_step_questions .form_group__checkbox_container .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.form_section__form_container .form_step .form_step_questions .form_group__checkbox_container .checkbox input {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.form_section__form_container .form_step .form_step_questions .form_group__checkbox_container label {
+  color: #545556;
   font-size: 1.4rem;
   font-family: "Changa", sans-serif;
-  font-weight: 600;
-  margin-bottom: 2rem;
+  font-weight: 500;
 }
 .form_section__form_container .form_step .form_step_questions .form_group__question {
   color: black;
   font-size: 1.5rem;
   font-family: "Changa", sans-serif;
-  font-weight: 400;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
 }
 .form_section__form_container .form_step .form_step_questions .form_group__answer {
   border: 1px solid #9fa2b4;
@@ -612,7 +634,7 @@ html {
   font-family: "Changa", sans-serif;
 }
 .form_section__form_container .form_step .form_step_questions .form_group__answer :focus {
-  border: 1px solid #222e60;
+  border: 2px solid #222e60;
 }
 .form_section__form_container .form_step .form_step_questions .form_group textarea {
   border: 1px solid #9fa2b4;

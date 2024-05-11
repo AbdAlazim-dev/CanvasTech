@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"
 import Footer from "../Components/Footer";
-import WhatSection from "../Components/WhatSection";
+import ProjectCustomerForm from "../Components/ProjectCustomerForm";
 import YourProjectForm from "../Components/YourProjectForm";
 import FormImage from "../assets/product-development.png"
+import ProjectSectorForm from "../Components/ProjectSectorForm";
+import ProjectsNeedForm from "../Components/ProjectsNeedsForm";
 
 
 function FormPage() {
@@ -32,6 +34,15 @@ function FormPage() {
             case 0: 
                 return <YourProjectForm />
                 break;
+            case 1:
+                return <ProjectSectorForm />
+                break;
+            case 2:
+                return <ProjectCustomerForm />
+                break;
+            case 3:
+                return <ProjectsNeedForm />
+                break;
             default: 
                 return <YourProjectForm />
                 break;
@@ -39,9 +50,14 @@ function FormPage() {
     }
     const NextOrSubmit = () => (
         formSetp === stepTitles.length - 1 ? (
-            <Link className="step_changer__button" to="/result">
-                انهاء
-            </Link>
+            <>
+                    <button className="step_changer__button" onClick={() => {
+                        setFormStep(formSetp - 1);
+                    }}>السابق</button>
+                <Link className="step_changer__button" to="/result">
+                    انهاء
+                </Link>
+            </>
         ) : (
             <>
                 {formSetp !== 0 && (
