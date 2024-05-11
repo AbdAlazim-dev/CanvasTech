@@ -1,0 +1,135 @@
+@use "../global/" as *;
+
+#form_section {
+    background-color: $light_background;
+    padding-top: 15rem;
+}
+.form_section {
+    min-height: 100vh;
+    div div {
+        border-radius: 1rem ;     
+              
+    }
+    &__title {
+        text-align: center;
+        font-size: $h4-size;
+        margin-bottom: 4rem;
+    }
+    &__form_container {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        @media (max-width:950px) {
+            flex-direction: column;
+        }
+        .service_description {
+            padding: 2rem;
+            width: calc(50% - 1rem);
+            background-color: white;
+            height: fit-content;
+            @media (max-width:1150px) {
+                width: calc(40% - 1rem);
+            }
+            @media (max-width:950px) {
+                width: 100%;
+            }
+         .image_container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            img {
+                width: 30%;
+            }
+            h3 {
+                color: $theme_color;
+                font-size: $h2-size;
+                font-family: $title-font;
+                font-weight: 600;
+            }
+
+         }  
+         .paragraph {
+            color: $text-Dgray;
+            font-size: $h3-size;
+            font-family: $paragraph-font;
+            font-weight: 400;
+            line-height: 2.5rem;
+         } 
+        }
+        .form_step {
+            width: calc(50% - 1rem);
+            background-color: white !important;
+            @media (max-width:950px) {
+                width: 100%;
+            }
+            .form_step_questions {
+                display: flex;
+                flex-direction: column;
+                .form_group {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 2rem;
+                    padding: 2rem;
+                    .title {
+                        color: $theme_color;
+                        font-size: $h4-size;
+                        font-family: $title-font;
+                        font-weight: 600;
+                        margin-bottom: 2rem;
+                    }
+                    &__question {
+                        color: black;
+                        font-size: 1.5rem;
+                        font-family: $title-font;
+                        font-weight: 400;
+                        margin-bottom: 1rem;
+                    }
+                    &__answer {
+                        border :1px solid $text-gray;
+                        height: 4rem;
+                        border-radius: 0.6rem;
+                        outline: none;
+                        padding: 0 1rem;
+                        font-family: $title-font;
+                        :focus {
+                            border: 1px solid $theme_color;
+                        }
+                    }
+                    textarea {
+                        border :1px solid $text-gray;
+                        border-radius: 0.6rem;
+                        outline: none;
+                        padding: 1rem;
+                        height: 100px;
+                        :focus {
+                            border: 1px solid $theme_color;
+                        }
+                    }
+                }
+            
+            }
+            .step_changer {
+                display: flex;
+                &__button {
+                    text-align: center;
+                    flex: 1;
+                    width: 100%;
+                    background-color: $theme_color;
+                    color: white;
+                    border: none;
+                    outline: none;
+                    margin: 1rem;
+                    font-family: $title-font;
+                    padding: 1rem;
+                    font-weight: 600;
+                    font-size: $h4-size;
+                    border-radius: 0.4rem;
+                }
+            }
+        }
+    }
+
+}

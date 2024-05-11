@@ -501,4 +501,144 @@ html {
   .footer_content__contact {
     flex: 1;
   }
+}
+
+#form_section {
+  background-color: #f5f5f5;
+  padding-top: 15rem;
+}
+
+.form_section {
+  min-height: 100vh;
+}
+.form_section div div {
+  border-radius: 1rem;
+}
+.form_section__title {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+}
+.form_section__form_container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 950px) {
+  .form_section__form_container {
+    flex-direction: column;
+  }
+}
+.form_section__form_container .service_description {
+  padding: 2rem;
+  width: calc(50% - 1rem);
+  background-color: white;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media (max-width: 1150px) {
+  .form_section__form_container .service_description {
+    width: calc(40% - 1rem);
+  }
+}
+@media (max-width: 950px) {
+  .form_section__form_container .service_description {
+    width: 100%;
+  }
+}
+.form_section__form_container .service_description .image_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.form_section__form_container .service_description .image_container img {
+  width: 30%;
+}
+.form_section__form_container .service_description .image_container h3 {
+  color: #222e60;
+  font-size: 2.2rem;
+  font-family: "Changa", sans-serif;
+  font-weight: 600;
+}
+.form_section__form_container .service_description .paragraph {
+  color: #545556;
+  font-size: 1.6rem;
+  font-family: "Readex Pro", sans-serif;
+  font-weight: 400;
+  line-height: 2.5rem;
+}
+.form_section__form_container .form_step {
+  width: calc(50% - 1rem);
+  background-color: white !important;
+}
+@media (max-width: 950px) {
+  .form_section__form_container .form_step {
+    width: 100%;
+  }
+}
+.form_section__form_container .form_step .form_step_questions {
+  display: flex;
+  flex-direction: column;
+}
+.form_section__form_container .form_step .form_step_questions .form_group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+.form_section__form_container .form_step .form_step_questions .form_group .title {
+  color: #222e60;
+  font-size: 1.4rem;
+  font-family: "Changa", sans-serif;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.form_section__form_container .form_step .form_step_questions .form_group__question {
+  color: black;
+  font-size: 1.5rem;
+  font-family: "Changa", sans-serif;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.form_section__form_container .form_step .form_step_questions .form_group__answer {
+  border: 1px solid #9fa2b4;
+  height: 4rem;
+  border-radius: 0.6rem;
+  outline: none;
+  padding: 0 1rem;
+  font-family: "Changa", sans-serif;
+}
+.form_section__form_container .form_step .form_step_questions .form_group__answer :focus {
+  border: 1px solid #222e60;
+}
+.form_section__form_container .form_step .form_step_questions .form_group textarea {
+  border: 1px solid #9fa2b4;
+  border-radius: 0.6rem;
+  outline: none;
+  padding: 1rem;
+  height: 100px;
+}
+.form_section__form_container .form_step .form_step_questions .form_group textarea :focus {
+  border: 1px solid #222e60;
+}
+.form_section__form_container .form_step .step_changer {
+  display: flex;
+}
+.form_section__form_container .form_step .step_changer__button {
+  text-align: center;
+  flex: 1;
+  width: 100%;
+  background-color: #222e60;
+  color: white;
+  border: none;
+  outline: none;
+  margin: 1rem;
+  font-family: "Changa", sans-serif;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-radius: 0.4rem;
 }/*# sourceMappingURL=styles.css.map */
