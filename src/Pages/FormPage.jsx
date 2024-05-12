@@ -10,41 +10,47 @@ import ProjectsNeedForm from "../Components/ProjectsNeedsForm";
 
 function FormPage() {
     const [formSetp, setFormStep] = useState(0)
-
     //user input values
     const [formValues, setFormValues] = useState({
         name: "",
         email: "",
-        phone: "",
-        idea: "",
-        description: "",
-        value: "",
-        financial: "",
-        business: "",
-        details: ""
+        phoneNumber: "",
+        projectName: "",
+        aboutProject: "",
+        projectGoal: "",
+        sector: "",
+        projectCustomers: "",
+        projectCore: [],
+        coreElements: [],
+        potentialPartners: [],
+        revenueSources: [],
+        costs: [],
     })
     const handleChange = (e) => {
         setFormValues({
             ...formValues,
             [e.target.name]: e.target.value
-        })
+        });
     }
     const handleStepChange = () => {
         switch(formSetp) {
             case 0: 
-                return <YourProjectForm />
+                return <YourProjectForm onChange={handleChange} formValues={formValues}/>
                 break;
             case 1:
-                return <ProjectSectorForm />
+                return <ProjectSectorForm onChange={handleChange} formValues={formValues}/>
                 break;
             case 2:
-                return <ProjectCustomerForm />
+                return <ProjectCustomerForm  onChange={handleChange} formValues={formValues}/>
                 break;
             case 3:
-                return <ProjectsNeedForm />
+                return <ProjectsNeedForm onChange={handleChange} formValues={formValues}/>
+                break;
+            case 4:
+                return <ProjectsNeedForm onChange={handleChange} formValues={formValues}/>
                 break;
             default: 
-                return <YourProjectForm />
+                return <YourProjectForm onChange={handleChange} formValues={formValues}/>
                 break;
         }
     }
@@ -73,6 +79,7 @@ function FormPage() {
     );
     const stepTitles = ["معلومات عنك وعن المشروع", "هدف ومجال المشروع", "العملاء ومركز المشروع","احتياجات المشروع والمنافسين"]
     return (
+        <>
         <section id="form_section" className="form_section">
             <div className="container">
                 <div className="form_section__pb">
@@ -106,6 +113,8 @@ function FormPage() {
                 </div>
             </div>
         </section>
+        <Footer/>
+        </>
     )
 }
 

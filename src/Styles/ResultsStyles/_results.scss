@@ -1,0 +1,11 @@
+@use "../global/" as *;
+#result-section {
+    height: 70rem;
+    background-color: $light_background;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $h2-size;
+}
