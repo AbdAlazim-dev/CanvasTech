@@ -55,6 +55,7 @@ function FormPage() {
             if (requiredFields.some(field => formValues[field] === "")) {
                 setErrorMessage(true);
             } else {
+                scroll(0,0)
                 setErrorMessage(false);
                 setFormStep(formSetp + 1);
             }
@@ -63,6 +64,7 @@ function FormPage() {
             if (requiredFields.some(field => formValues[field] === "")) {
                 setErrorMessage(true);
             } else {
+                scroll(0,0)
                 setErrorMessage(false);
                 setFormStep(formSetp + 1);
             }
@@ -71,6 +73,7 @@ function FormPage() {
             if (requiredFields.some(field => formValues[field].length === 0)) {
                 setErrorMessage(true);
             } else {
+                scroll(0,0)
                 setErrorMessage(false);
                 setFormStep(formSetp + 1);
             }
@@ -84,6 +87,7 @@ function FormPage() {
             if (requiredFields.some(field => formValues[field].length === 0)) {
                 setErrorMessage(true);
             } else {
+                scroll(0,0)
                 setErrorMessage(false);
                 setFormStep(formSetp + 1);
             }
