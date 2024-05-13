@@ -6,10 +6,13 @@ import YourProjectForm from "../Components/YourProjectForm";
 import FormImage from "../assets/product-development.png"
 import ProjectSectorForm from "../Components/ProjectSectorForm";
 import ProjectsNeedForm from "../Components/ProjectsNeedsForm";
+import Result from "../Components/Result";
 
 
 function FormPage() {
     const [formSetp, setFormStep] = useState(0)
+    const [errorMessage, setErrorMessage] = useState(false);
+
     //user input values
     const [formValues, setFormValues] = useState({
         name: "",
@@ -20,17 +23,71 @@ function FormPage() {
         projectGoal: "",
         sector: "",
         projectCustomers: "",
-        projectCore: [],
+        projectTasks: [],
         coreElements: [],
         potentialPartners: [],
-        revenueSources: [],
         costs: [],
+        projectCompetitors: [],
+        revenueSources: [],
+        projectFeatures: [],
+        projectCore: [],
+        CommunicationMethods: []
     })
+    //if the user didn't fill the required fields
     const handleChange = (e) => {
-        setFormValues({
-            ...formValues,
-            [e.target.name]: e.target.value
+        setFormValues(prevState => {
+            if (Array.isArray(prevState[e.target.name])) {
+            return {
+                ...prevState,
+                [e.target.name]: [...prevState[e.target.name], e.target.value]
+            };
+            } else {
+            return {
+                ...prevState,
+                [e.target.name]: e.target.value
+            };
+            }
         });
+    }
+    const handleChangeToNextStep = () => {
+        if (formSetp === 0) {
+            const requiredFields = ["name", "email", "phoneNumber", "projectName", "aboutProject"];
+            if (requiredFields.some(field => formValues[field] === "")) {
+                setErrorMessage(true);
+            } else {
+                setErrorMessage(false);
+                setFormStep(formSetp + 1);
+            }
+        } else if (formSetp === 1) {
+            const requiredFields = ["projectGoal", "sector", "projectCustomers"];
+            if (requiredFields.some(field => formValues[field] === "")) {
+                setErrorMessage(true);
+            } else {
+                setErrorMessage(false);
+                setFormStep(formSetp + 1);
+            }
+        } else if (formSetp === 2) {
+            const requiredFields = ["projectCore", "CommunicationMethods", "projectFeatures"];
+            if (requiredFields.some(field => formValues[field].length === 0)) {
+                setErrorMessage(true);
+            } else {
+                setErrorMessage(false);
+                setFormStep(formSetp + 1);
+            }
+        } else if (formSetp === 3) {
+            const requiredFields = ["projectTasks" ,
+            "coreElements",
+            "potentialPartners",
+            "revenueSources",
+            "costs",
+            "projectCompetitors"];
+            if (requiredFields.some(field => formValues[field].length === 0)) {
+                setErrorMessage(true);
+            } else {
+                setErrorMessage(false);
+                setFormStep(formSetp + 1);
+            }
+        } 
     }
     const handleStepChange = () => {
         switch(formSetp) {
@@ -47,7 +104,7 @@ function FormPage() {
                 return <ProjectsNeedForm onChange={handleChange} formValues={formValues}/>
                 break;
             case 4:
-                return <ProjectsNeedForm onChange={handleChange} formValues={formValues}/>
+                return <Result />
                 break;
             default: 
                 return <YourProjectForm onChange={handleChange} formValues={formValues}/>
@@ -60,9 +117,9 @@ function FormPage() {
                     <button className="step_changer__button" onClick={() => {
                         setFormStep(formSetp - 1);
                     }}>السابق</button>
-                <Link className="step_changer__button" to="/result">
+                <button className="step_changer__button" onClick={handleChangeToNextStep}>
                     انهاء
-                </Link>
+                </button>
             </>
         ) : (
             <>
@@ -71,9 +128,7 @@ function FormPage() {
                         setFormStep(formSetp - 1);
                     }}>السابق</button>
                 )}
-                <button className="step_changer__button" onClick={() => {
-                    setFormStep(formSetp + 1);
-                }}>التالي</button>
+                <button className="step_changer__button" onClick={handleChangeToNextStep}>التالي</button>
             </>
         )
     );
@@ -102,12 +157,15 @@ function FormPage() {
                          والقائمة؛ فهي تساعدهم على النمو، وزيادة الربحية والتنافسية، وجذب الاستثمار.
                         </p>
                     </div>
-                        <div className="form_step">
+                    {formSetp === 4 ? "" : <div className="form_step">
                             {handleStepChange()}
+                            {errorMessage ? <div className="error_message">
+                                <p>املأ الحقول المطلوبة في هذه القائمة *</p>
+                            </div> : ""}
                             <div className="step_changer">
                                 {NextOrSubmit()}
                             </div>
-                        </div>
+                        </div>}
                     <div>
                     </div>
                 </div>

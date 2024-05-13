@@ -524,6 +524,7 @@ html {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  padding: 0 4rem;
   flex-wrap: wrap;
 }
 @media (max-width: 950px) {
@@ -600,7 +601,7 @@ html {
 .form_section__form_container .form_step .form_step_questions .form_group__checkbox_container {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 0ز2rem;
   align-items: center;
 }
 .form_section__form_container .form_step .form_step_questions .form_group__checkbox_container .checkbox {
@@ -625,6 +626,17 @@ html {
   font-weight: 600;
   margin-top: 2.5rem;
   margin-bottom: 0.8rem;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.form_section__form_container .form_step .form_step_questions .form_group__question::before {
+  content: "*";
+  color: rgb(255, 0, 0);
+  margin-right: 0.5rem;
+  position: absolute;
+  left: -1rem;
+  bottom: 0.3rem;
 }
 .form_section__form_container .form_step .form_step_questions .form_group__answer {
   border: 1px solid #9fa2b4;
@@ -664,6 +676,14 @@ html {
   font-weight: 600;
   font-size: 1.4rem;
   border-radius: 0.4rem;
+}
+.form_section__form_container .form_step .error_message {
+  color: rgb(143, 0, 0);
+  background-color: #ff7f7f;
+  font-size: 1.4rem;
+  font-family: "Changa", sans-serif;
+  padding: 0.6rem 0.4rem;
+  margin: 0 15px;
 }
 
 #result-section {

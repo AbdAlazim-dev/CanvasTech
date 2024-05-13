@@ -1,6 +1,4 @@
-import PhoneInput from "react-phone-number-input/input";
 function YourProjectForm ({onChange, formValues}) {
-  console.log(formValues)
   return (
     <>
         <div className="form_step_questions">

@@ -5,7 +5,7 @@ function Checkbox({value, label, name, onChange }) {
         type="checkbox"
         name={name}
         value={value}
-        onChange={onChange}
+        onClick={onChange}
         />
         <label className="from_group__answer">{label}</label>
     </span>

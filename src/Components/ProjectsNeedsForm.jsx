@@ -1,11 +1,12 @@
 import {ProjectsNeedsQuestionsAndAnswers} from "./ProjectsNeedsFormQuestionsAndAnswers"
 import CheckBox from "./CheckBox";
 function ProjectsNeedForm({onChange, formValues}) {
-    const inputsName = ["projectCore",
+    const inputsName = ["projectTasks",
     "coreElements",
     "potentialPartners",
     "revenueSources",
-    "costs"]
+    "costs",
+    "projectCompetitors"]
 
     return (
         <div className="form_step_questions">
@@ -17,7 +18,6 @@ function ProjectsNeedForm({onChange, formValues}) {
                         </label>
                         {question.answers.map((option, optionIndex) => (
                             <CheckBox
-
                                 key={optionIndex}
                                 value={option}
                                 label={option}
