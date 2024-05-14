@@ -8,11 +8,10 @@ import ProjectSectorForm from "../Components/ProjectSectorForm";
 import ProjectsNeedForm from "../Components/ProjectsNeedsForm";
 import Result from "../Components/Result";
 
-
 function FormPage() {
     const [formSetp, setFormStep] = useState(0)
     const [errorMessage, setErrorMessage] = useState(false);
-
+    console.log(formSetp)
     //user input values
     const [formValues, setFormValues] = useState({
         name: "",
@@ -91,28 +90,25 @@ function FormPage() {
                 setErrorMessage(false);
                 setFormStep(formSetp + 1);
             }
-        } 
+        }  else if (formSetp === 4) {
+            scroll(0,0)
+            setErrorMessage(false);
+        }
     }
     const handleStepChange = () => {
         switch(formSetp) {
             case 0: 
                 return <YourProjectForm onChange={handleChange} formValues={formValues}/>
-                break;
             case 1:
                 return <ProjectSectorForm onChange={handleChange} formValues={formValues}/>
-                break;
             case 2:
                 return <ProjectCustomerForm  onChange={handleChange} formValues={formValues}/>
-                break;
             case 3:
                 return <ProjectsNeedForm onChange={handleChange} formValues={formValues}/>
-                break;
             case 4:
                 return <Result />
-                break;
             default: 
-                return <YourProjectForm onChange={handleChange} formValues={formValues}/>
-                break;
+                return <YourProjectForm onChange={handleChange} formValues={formValues}/>;
         }
     }
     const NextOrSubmit = () => (
@@ -144,7 +140,7 @@ function FormPage() {
                 <div className="form_section__title">
                     <h1>{stepTitles[formSetp]}</h1>
                 </div>
-                <div className="form_section__pb">
+                <div className={`form_section__pb ${formSetp === 4 && "none"}`}>
                     <span className={`progres_bar ${formSetp === 0 ? "step_1" : formSetp === 1 ? "step_2" : formSetp === 2 ? "step_3" : "step_4"}`}></span>
                     <span className="progres_step">1</span>
                     <span className="progres_step">2</span>
@@ -165,14 +161,15 @@ function FormPage() {
                          والقائمة؛ فهي تساعدهم على النمو، وزيادة الربحية والتنافسية، وجذب الاستثمار.
                         </p>
                     </div>
-                    {formSetp === 4 ? "" : <div className="form_step">
+                    {<div className={`form_step`}>
                             {handleStepChange()}
                             {errorMessage ? <div className="error_message">
                                 <p>املأ الحقول المطلوبة في هذه القائمة *</p>
                             </div> : ""}
-                            <div className="step_changer">
+                            {formSetp === 4 || <div className="step_changer">
                                 {NextOrSubmit()}
-                            </div>
+                            </div>}
+                            
                         </div>}
                     <div>
                     </div>
