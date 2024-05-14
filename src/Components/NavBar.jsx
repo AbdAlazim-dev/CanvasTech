@@ -36,9 +36,9 @@ function NavBar() {
                         <img src={JdwaLogo} alt="logo"/>
                     </Link>
                     <ul className="navbar__container__links">
-                        <li><a href="">عن الجدوى</a></li>
-                        <li><a href="">الخدمات الاستشارية</a></li>
-                        <li><a href="">مجتمع الجدوى</a></li>
+                        <li><a href="https://www.aljdwa.com/من-نحن/">عن الجدوى</a></li>
+                        <li><a href="https://www.aljdwa.com/الخدمات-الإستشارية/دراسات-الجدوى-الاقتصادية/">الخدمات الاستشارية</a></li>
+                        <li><a href="https://www.aljdwa.com/التقارير-الإقتصادية/">مجتمع الجدوى</a></li>
                     <button className="navbar__container__btn">
                         تسجيل الدخول
                     </button>
@@ -54,12 +54,12 @@ function NavBar() {
                     </button>
                     <img src={JdwaLogo} className="logo"/>
                     <ul className="mobile__navbar__links">
-                        <li><a href="">عن الجدوى</a></li>
-                        <li><a href="">الخدمات الاستشارية</a></li>
-                        <li><a href="">مجتمع الجدوى</a></li>
-                        <li><a href="">انضم إلينا</a></li>
-                        <li><a href="">اتصل بنا</a></li>
-                        <li><a href="">تسجيل الدخول</a></li>
+                        <li><a href="https://www.aljdwa.com/من-نحن/">عن الجدوى</a></li>
+                        <li><a href="https://www.aljdwa.com/الخدمات-الإستشارية/دراسات-الجدوى-الاقتصادية/">الخدمات الاستشارية</a></li>
+                        <li><a href="https://www.aljdwa.com/التقارير-الإقتصادية/">مجتمع الجدوى</a></li>
+                        <li><a href="https://www.aljdwa.com/التقارير-الإقتصادية/">انضم إلينا</a></li>
+                        <li><a href="https://www.aljdwa.com/التقارير-الإقتصادية/">اتصل بنا</a></li>
+                        <li><a href="https://www.aljdwa.com/jdwatec/login">تسجيل الدخول</a></li>
                     </ul>
                 </nav>
             </header>

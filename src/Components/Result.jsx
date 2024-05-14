@@ -15,7 +15,7 @@ function Result() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 4000);
   }, []);
   console.log("The result is loading...");
   if (loading) {
@@ -27,10 +27,10 @@ function Result() {
               <SkeletonImage width={300} height={200} effect="wave" />
             </div>
             <div className="skeleton_descreption_container">
-              <SkeletonBlock width={100} height={10} effect="wave" />
-              <SkeletonBlock width={70} height={10} effect="wave" />
-              <SkeletonBlock width={70} height={10} effect="wave" />
-              <SkeletonBlock width={70} height={10} effect="wave" />
+              <SkeletonBlock width={300} height={10} effect="wave" />
+              <SkeletonBlock width={200} height={10} effect="wave" />
+              <SkeletonBlock width={200} height={10} effect="wave" />
+              <SkeletonBlock width={200} height={10} effect="wave" />
             </div>
           </div>
         </div>
@@ -43,7 +43,76 @@ function Result() {
     <div className="form_step_questions">
         <div className="form_group">
           <h1 className="title">النماذج المقترحة </h1>
-          <PdfFileCard image={CanvaImage}
+          <PdfFileCard image={
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            CanvaImage}
           descreption={"يُعرف نموذج العمل Business model بأنه الخطة التي تضعها الشركات من أجل تحقيق الأرباح، إذ يحتوي على المنتجات أو الخدمات المُقرر تقديمها، والسوق المُستهدف، والنفقات المتوقعة، واستراتيجيات التسويق، وقاعدة العملاء، إلى جانب فرص الشراكة مع الشركات الأخرى القائمة."}
           name={"نموذج عمل الإعلانات"}
           fileToDownload={TestCanva}

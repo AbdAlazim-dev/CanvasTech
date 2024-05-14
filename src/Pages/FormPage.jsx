@@ -148,7 +148,7 @@ function FormPage() {
                     <span className="progres_step">4</span>
                 </div>
                 <div className="form_section__form_container">
-                    <div className={`service_description ${formSetp > 0 ? "none_after_step" : ""}`}>
+                    <div className={`service_description ${formSetp > 0  ? "none_after_step" : ""} ${formSetp > 3 && "none"}`}>
                         <div className="image_container">
                             <img src={FormImage} alt="form"/>
                             <h3>اختيار نموذج العمل التجاري</h3>
@@ -161,7 +161,7 @@ function FormPage() {
                          والقائمة؛ فهي تساعدهم على النمو، وزيادة الربحية والتنافسية، وجذب الاستثمار.
                         </p>
                     </div>
-                    {<div className={`form_step`}>
+                    {<div className={`form_step ${formSetp === 4 && "whole_width"}`}>
                             {handleStepChange()}
                             {errorMessage ? <div className="error_message">
                                 <p>املأ الحقول المطلوبة في هذه القائمة *</p>
