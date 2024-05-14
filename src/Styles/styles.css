@@ -515,10 +515,60 @@ html {
 .form_section div div {
   border-radius: 1rem;
 }
+.form_section__pb {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  margin-top: -2rem;
+  margin-bottom: 4rem;
+  position: relative;
+  height: 2rem;
+  background-color: rgb(203, 203, 203);
+}
+@media (max-width: 950px) {
+  .form_section__pb {
+    width: 70%;
+  }
+}
+.form_section__pb .progres_step {
+  border: 4px solid #222e60;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 1;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.form_section__pb .progres_bar {
+  height: 2rem;
+  background-color: #222e60;
+  position: absolute;
+  right: 0rem;
+  border-radius: 4rem;
+}
+.form_section__pb .progres_bar.step_1 {
+  width: 0%;
+}
+.form_section__pb .progres_bar.step_2 {
+  width: 33.3%;
+}
+.form_section__pb .progres_bar.step_3 {
+  width: 66.6%;
+}
+.form_section__pb .progres_bar.step_4 {
+  width: 100%;
+}
 .form_section__title {
   text-align: center;
   font-size: 1.4rem;
   margin-bottom: 4rem;
+  order: 4;
 }
 .form_section__form_container {
   display: flex;
@@ -530,6 +580,7 @@ html {
 @media (max-width: 950px) {
   .form_section__form_container {
     flex-direction: column;
+    padding: 0 0;
   }
 }
 .form_section__form_container .service_description {
@@ -601,7 +652,6 @@ html {
 .form_section__form_container .form_step .form_step_questions .form_group__checkbox_container {
   display: flex;
   gap: 1rem;
-  margin-top: 0ز2rem;
   align-items: center;
 }
 .form_section__form_container .form_step .form_step_questions .form_group__checkbox_container .checkbox {
@@ -624,11 +674,10 @@ html {
   font-size: 1.5rem;
   font-family: "Changa", sans-serif;
   font-weight: 600;
-  margin-top: 2.5rem;
-  margin-bottom: 0.8rem;
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
+  margin: 0.8rem 0;
 }
 .form_section__form_container .form_step .form_step_questions .form_group__question::before {
   content: "*";
@@ -684,6 +733,12 @@ html {
   font-family: "Changa", sans-serif;
   padding: 0.6rem 0.4rem;
   margin: 0 15px;
+}
+
+@media (max-width: 950px) {
+  .none_after_step {
+    display: none;
+  }
 }
 
 #result-section {

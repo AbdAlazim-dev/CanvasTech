@@ -141,14 +141,18 @@ function FormPage() {
         <>
         <section id="form_section" className="form_section">
             <div className="container">
-                <div className="form_section__pb">
-
-                </div>
                 <div className="form_section__title">
                     <h1>{stepTitles[formSetp]}</h1>
                 </div>
+                <div className="form_section__pb">
+                    <span className={`progres_bar ${formSetp === 0 ? "step_1" : formSetp === 1 ? "step_2" : formSetp === 2 ? "step_3" : "step_4"}`}></span>
+                    <span className="progres_step">1</span>
+                    <span className="progres_step">2</span>
+                    <span className="progres_step">3</span>
+                    <span className="progres_step">4</span>
+                </div>
                 <div className="form_section__form_container">
-                    <div className="service_description">
+                    <div className={`service_description ${formSetp > 0 ? "none_after_step" : ""}`}>
                         <div className="image_container">
                             <img src={FormImage} alt="form"/>
                             <h3>اختيار نموذج العمل التجاري</h3>

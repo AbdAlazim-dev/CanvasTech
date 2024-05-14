@@ -11,10 +11,59 @@
         border-radius: 1rem ;     
               
     }
+    &__pb {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        align-items: center;
+        margin-top: -2rem;
+        margin-bottom: 4rem;
+        position: relative;
+        height: 2rem;
+        @media (max-width: 950px) {
+            width: 70%;
+            
+        }
+        background-color: rgb(203, 203, 203);
+        .progres_step {
+            border: 4px solid $theme_color;
+            border-radius: 50%;
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            z-index: 1;
+            font-size: $h2-size;
+            font-weight: 700;
+        }
+        .progres_bar {
+            height: 2rem;
+            background-color: $theme_color;
+            position: absolute;
+            right: 0rem;
+            border-radius: 4rem;
+            &.step_1 {
+                width: 0%;
+            }
+            &.step_2 {
+                width: 33.3%;
+            }
+            &.step_3 {
+                width: 66.6%;
+            }
+            &.step_4 {
+                width: 100%;
+            }
+        }
+    }
     &__title {
         text-align: center;
         font-size: $h4-size;
         margin-bottom: 4rem;
+        order: 4;
     }
     &__form_container {
         display: flex;
@@ -24,6 +73,7 @@
         flex-wrap: wrap;
         @media (max-width:950px) {
             flex-direction: column;
+            padding: 0 0;
         }
         .service_description {
             padding: 2rem;
@@ -85,7 +135,6 @@
                     &__checkbox_container {
                         display: flex;
                         gap: 1rem;
-                        margin-top: 0ز2rem;
                         align-items: center;
                         .checkbox {
                             display: flex;
@@ -108,10 +157,9 @@
                         font-size: 1.5rem;
                         font-family: $title-font;
                         font-weight: 600;
-                        margin-top: 2.5rem;
-                        margin-bottom: 0.8rem;
                         position: relative;
                         width: fit-content;
+                        margin: 0.8rem 0;
                         &::before {
                             content: "*";
                             color: rgb(255, 0, 0);
@@ -174,4 +222,9 @@
         }
     }
 
+}
+.none_after_step {
+    @media (max-width: 950px){
+        display: none;
+    }
 }
